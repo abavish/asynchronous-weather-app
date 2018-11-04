@@ -1,0 +1,22 @@
+{
+  "name": "asynchronous-weather-app",
+  "version": "1.0.0",
+  "description": "A node app which makes use of asynchronous http requests along with Google's geo location API and the dark sky API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abavish/asynchronous-weather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abavish/asynchronous-weather-app/issues"
+  },
+  "homepage": "https://github.com/abavish/asynchronous-weather-app#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
