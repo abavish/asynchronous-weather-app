@@ -1,10 +1,22 @@
-const request = require('request')
+const yargs = require('yargs')
 
-request({
-  url: 'http://www.mapquestapi.com/geocoding/v1/address?key=AWU07GqEPOYKIqgEGGbDcVNi3Df1SY9t&location=Fullerton,CA',
-  json: true
-}, (error, response, body) => {
-  console.log(`Location is ${body.results[0].providedLocation.location}
-    Latitiude is : ${body.results[0].locations[0].latLng.lat}
-    Longitude is ${body.results[0].locations[0].latLng.lng}`);
-})
+const geocode = require('./geocode/geocode')
+
+
+const argv = yargs
+  .options({
+    a: {
+      demand: true,
+      alias: 'address',
+      describe: 'Address to fetch the weather for',
+      string: true //parse as string
+    }
+  })
+  .help()
+  .alias('help', 'h')
+  .argv
+// console.log(argv);
+//
+// console.log(argv.address)
+
+geocode.geocodeAddress(argv.address)
